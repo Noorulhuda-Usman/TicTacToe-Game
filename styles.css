@@ -1,0 +1,91 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    max-width: 300px;
+    margin: 50px auto;
+}
+
+.cell {
+    background-color: #f0f0f0;
+    border: 2px solid #444;
+    height: 100px;
+    width: 100px;
+    font-size: 2rem;
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth color change */
+}
+
+.cell[data-marked="true"] {
+    opacity: 1; /* Reveal marked cell */
+    transition: opacity 0.3s ease;
+}
+
+.cell:hover {
+    background-color: rgb(250, 217, 176);
+    transform: scale(1.05); /* Slight scaling */
+    transition: transform 0.3s ease, background-color 0.3s ease; /* Smooth animation */ 
+}
+
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #83aae1;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+#status {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 20px;
+    color: #333;  
+}
+
+/* Sparkle effect for the win message */
+@keyframes sparkle {
+    0%, 100% {
+        text-shadow: 0 0 5px #F5F5F5, 0 0 10px #FFFFE0, 0 0 20px #D3D3D3;
+        color: #F5F5F5; /* Soft White */
+        transform: scale(1);
+    }
+    50% {
+        text-shadow: 0 0 10px #FFFFE0, 0 0 20px #F5F5F5, 0 0 30px #D3D3D3;
+        color: #FFFFE0; /* Pale Yellow */
+        transform: scale(1.1);
+    }
+}
+
+.sparkling {
+    animation: sparkle 1s infinite;
+}
+
+#resetButton {
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+#resetButton:hover{
+    background-color: bisque;
+}
