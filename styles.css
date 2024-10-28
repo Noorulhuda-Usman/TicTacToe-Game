@@ -39,7 +39,6 @@
     transition: transform 0.3s ease, background-color 0.3s ease; /* Smooth animation */ 
 }
 
-
 body {
     display: flex;
     flex-direction: column;
